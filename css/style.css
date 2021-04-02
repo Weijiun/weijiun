@@ -88,10 +88,24 @@ img {
   max-width: 948px;
 }
 
+.lobby_content a{
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
   h1{
   font-size: 30px;
   letter-spacing: 6px;
   font-weight: 500;
+  }
+
+  .wj{
+    display: inline-block;
+    transition: 0.3s;
+  }
+
+  .wj:hover{
+    transform: translate(0 , 8%);
   }
 
   h2{
