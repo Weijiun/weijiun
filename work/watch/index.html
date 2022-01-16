@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weijiun | iRemedy watch concept design</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <!-- sidebar -->
+        <aside class="sidebar">
+            <h1 class="WJ"><a href="https://weijiun.github.io/weijiun/">WEIJIUN</a></h1>
+            <ul>
+                <li><a href="https://weijiun.github.io/weijiun/">◯ WORK</a></li>
+                <li><a href="#">◯ ABOUT</a></li>
+                <li><a href="https://www.linkedin.com/in/weijiunliu/" target="blank">◯ LINKEDIN</a></li>
+                <li><a href="https://www.instagram.com/weeeeeknds/" target="blank">◯ INSTAGRAM</a></li>
+            </ul>
+            <div class="copyright">
+                <p>COPYRIGHT(C)2021-2022 <br>
+                    WEIJIUN DESIGN <br>
+                    All Rights Reserved.</p>
+            </div>
+        </aside>
+        <!-- sidebar end -->
+
+        <main>
+            <div class="content">
+                <!-- topEmail -->
+                <div class="collab">
+                    <h3>If you would like to collab or have any questions, give me a shout. → <a id="p2"
+                            href="mailto:liuweijiun@gmail.com">liuweijiun@gmail.com</a>
+                        <button onclick="copyToClipboard('#p2')">COPY</button>
+                    </h3>
+                </div>
+                <!-- topEmail end -->
+
+                <!-- project brief -->
+                <div class="brief">
+                    <div class="project">
+                        <h4>PROJECT</h4>
+                        <h2>iREMEDY</h2>
+                        <p class="subheading">A watch helps keep track of medication.</p>
+                        <p class="subheading_CH">健康管理概念錶</br>
+                            入圍德國紅點概念設計獎評選
+                        </p>
+                    </div>
+
+                    <div class="PJinfo">
+
+                        <h4>DATE</h4>
+                        <p>April 14th, 2016</p>
+                        <h4>COMPETITION</h4>
+                        <p>Red Dot Award: Design Concept 2016</br>
+                            shortlisted for final judging
+                        </p>
+                        <h4>DESIGNER</h4>
+                        <p>Weijiun</p>
+                    </div>
+
+                </div>
+                <!-- project brief end -->
+
+                <!-- project content -->
+                <div class="PJcontent">
+                    <div class="PJcontent_paragraph01">
+                        <p class="paragraph01_EN">One of the most important competitions I took part in university was a
+                            conceptual
+                            design for the German Red Dot Award. I created a watch called ‘iRemedy’ to solve
+                            the problem of forgetting to take medicine. This product helps the elderly or patients
+                            with long-term requirements for taking medicine by removing the need to keep
+                            track of time.</br>
+                            </br>
+                            It combined functions such as impulse measurement, abnormal notification, a red
+                            light reminder and pill compartments. My submission was honoured by being
+                            shortlisted, a precious experience that had a positive impact on my life.</br>
+                        </p>
+                        <p class="paragraph01_CH">
+                            因醫療發展迅速，已有許多國家邁入高齡化社會，為減輕生活負擔，而設計"iRemedy"此概念手錶協助提醒每日服藥時間的追蹤，
+                            提供給記憶力退化的老年人與有長期服藥需求的對象，幫助穩定病況也能減輕照顧者的負擔。</br>
+                            </br>
+                            iRemedy概念錶結合4項主要功能：</br>
+                            ① 脈搏測量</br>
+                            ② 脈搏異常通知</br>
+                            ③ 服藥時間提醒</br>
+                            ④ 可攜式藥盒</br>
+                        </p>
+                    </div>
+
+                    <img src="images/watch-01.jpg" alt="">
+                    <img src="images/watch-02.jpg" alt="">
+                    <img src="images/watch-03.jpg" alt="">
+                    <img src="images/watch-04.jpg" alt="">
+                    <img src="images/watch-05.jpg" alt="">
+                    <img src="images/watch-06.jpg" alt="">
+                    <img src="images/watch-07.jpg" alt="">
+                    <img src="images/watch-08.jpg" alt="">
+                    <img src="images/watch-09.jpg" alt="">
+                </div>
+                <!-- project content end -->
+
+                <!-- copyright_mobile -->
+                <div class="copyright_mobile">
+                    <p>COPYRIGHT(C)2021-2022 WEIJIUN DESIGN All Rights Reserved.</p>
+                </div>
+                <!-- copyright_mobile end -->
+
+            </div>
+        </main>
+    </div>
+    <!-- copyEmail -->
+    <script>
+        function copyToClipboard(element) {
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val($(element).text()).select();
+            document.execCommand("copy");
+            $temp.remove();
+        }
+
+    </script>
+</body>
+
+</html>

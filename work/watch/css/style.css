@@ -62,11 +62,17 @@ body {
     height: 100vh;
   }
 
-/* sidebar */
+  img{
+    display: block;
+    width: 100%;
+    margin: 3% auto;
+  }
+
   main {
     overflow-y: auto;
   }
 
+  /* sidebar */
   aside {
     border-right:  1px solid #000;
     background: rgb(240, 240, 240);
@@ -143,6 +149,7 @@ body {
     display: none;
   }
 
+
   @media (max-width: 500px) {
     .wrapper {
       flex-direction: column-reverse;
@@ -162,34 +169,35 @@ body {
       padding-top: 0;
       padding-bottom: 0;
     }
-  
-    .sidebar li{
-        font-size: 0.7rem;
-        line-height: 1.5rem;
-    }
 
+    .sidebar li{
+      font-size: 0.7rem;
+      line-height: 1.5rem;
+  }
+  
     .copyright{
       display: none;
     }
     .copyright_mobile{
       padding: 5%;
-      background-color: #000;
+      background-color: #fff;
       display: block;
       font-weight: 400;
-      font-size: 0.6rem;
+      font-size: 0.7rem;
       line-height: 1.2rem;
       letter-spacing: 0.05rem;
-      color: rgb(138, 138, 138);
+      color: rgb(156, 156, 156);
     }
   }
   /* sidebar end */
 
-  .content {
-    font-family: hero-new,sans-serif;
+  .content{
+    width: 100%;
   }
 
-  /* Email */
+  /* topEmail */
   .collab{
+    font-family: hero-new,sans-serif;
     color: #fff;
     background-color: #000;
     padding: 1rem 5%;
@@ -203,7 +211,7 @@ body {
       color: #000;
       background-color: #fff;
       text-decoration: none;
-      font-size: 1rem;
+      font-size: 0.9rem;
       letter-spacing: 0.05rem;
       font-weight: 500;
       transition: 0.1s;
@@ -231,183 +239,121 @@ body {
     background-color: #fff;
     color: #000;
   }
-  /* Email end */
+  /* topEmail end */
 
-  /* bio */
-  .bio{
+  /* project brief */
+  .brief{
       border-bottom: 1px solid #000;
       display: flex;
       padding: 5%;
-      font-family: hero-new,sans-serif;
   }
 
-  .bio h2{
-    width: 30%;
-    /* margin: 0px auto; */
-    font-weight: 300;
-    font-style: normal;
-    letter-spacing : 0.02rem;
-    font-size: 2.3rem;
-    line-height: 3rem;
-    text-align: left;
+  .project{
+    width: 50%;
   }
 
-  .bio_content{
-    width: 55%;
+  .brief h4{
+    font-size: 0.6rem;
+    letter-spacing: 0.08rem;
+    font-weight: 600;
+    line-height: 0.9rem;
+}
+
+.project h2{
+  font-size: 2rem;
+  line-height: 3rem;
+  letter-spacing : 0.15rem;
+  font-weight:400;
+  text-align: left;
+}
+
+.project .subheading{
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 2rem;
+  letter-spacing: 0.05rem;
+}
+
+.project .subheading_CH{
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 1.3rem;
+  letter-spacing: 0.1rem;
+}
+
+  .PJinfo{
+    width: 50%;
     margin-left: 5%;
-    /* margin: 0px auto; */
-    font-weight: 300;
-    font-style: normal;
-    line-height : 1.8rem;
-    letter-spacing : 0.04rem;
-    font-size: 0.9rem;
-    text-align: left;
   }
 
-  .tag{
-      background-color: #fff;
-      display: inline-block;
-      margin: 0.8rem 0.4rem 0 0;
+  .PJinfo p{
       font-size: 0.8rem;
-      font-weight: 400;
-      border: 1px solid #000;
-      padding: 2px 15px;
-      border-radius: 50px;
-      letter-spacing: 0.05rem;
+      letter-spacing: 0.1rem;
+      font-weight: 200;
+      line-height: 1.3rem;
+      margin-bottom: 3%;
   }
 
   @media (max-width: 767px) {
-    .bio{
+    .brief{
       display: block;
     }
-    .bio h2{
+    .project{
       width: 100%;
     }
-    .bio_content{
+    .PJinfo{
       width: 100%;
       margin-left: 0;
-      margin-top: 5%;
-    }
-  }
-  /* bio end */
-
-  /* gallery */
-  .gallery{
-    width: 100%;
-    background-color: #000;
-    padding: 5%;
-    height: 1500px;
-  }
-
-  .work li{
-    background-color: #fff;
-    width: 29.333%;
-    float: left;
-    margin-left: 2%;
-    margin-right: 2%;
-    margin-bottom: 3rem;
-    border-radius: 10px;
-    padding: 2%;
-  }
-
-  .work img{
-    width: 100%;
-    display: block;
-    margin: 0 auto 5% auto;
-    border-radius: 10px;
-  }
-
-  .work img:hover{
-    border: #000 solid 1px;
-  }
-
-  .work h4{
-    font-size: 0.9rem;
-    line-height: 1.8rem;
-    font-weight: 300;
-    letter-spacing: 0.08rem;
-    text-align: center;
-  }
-
-  .work h5{
-    font-size: 0.7rem;
-    line-height: 1.8rem;
-    font-weight: 400;
-    letter-spacing: 0.05rem;
-    text-align: center;
-  }
-
-  .work .date{
-    font-size: 0.7rem;
-    line-height: 1.8rem;
-    font-weight: 300;
-    letter-spacing: 0.05rem;
-    text-align: center;
-    color: rgb(105, 105, 105);
-  }
-
-  .work a{
-    text-decoration: none;
-  }
-
-  .work_btn{
-    width: 50%;
-    color: rgb(116, 116, 116);
-    /* display: inline-block; */
-    font-size: 0.8rem;
-    font-weight: 300;
-    border: 1px solid rgb(179, 179, 179);
-    padding: 10px 15px;
-    border-radius: 50px;
-    letter-spacing: 0.05rem;
-    margin: 5% auto 0 auto;
-    text-align: center;
-  }
-
-  .work_btn:hover{
-    color: #fff;
-    background-color: #000;
-  }
-
-  @media (max-width: 1200px) {
-    .work_btn{
-      width: 62%;
-      margin-bottom: 3%;
-    }
-  }
-
-  @media (max-width: 1000px) {
-    .work_btn{
-      width: 85%;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .work li{
-      width: 46%;
-    }
-    .work_btn{
-      width: 62%;
+      margin-top: 7%;
     }
   }
 
   @media (max-width: 680px) {
-    .work_btn{
-      width: 85%;
+    .project h2{
+      font-size: 1.6rem;
+      line-height: 2.5rem;
     }
+  }
+  /* project brief end */
+
+  /* project content */
+  .PJcontent{
+    padding: 5%;
   }
 
-  @media (max-width: 550px) {
-    .work_btn{
-      width: 95%;
-    }
+  .PJcontent_paragraph01{
+    display: flex;
   }
 
-  @media (max-width: 380px) {
-    .work li{
-      width: 96%;
+  .paragraph01_EN{
+    width: 47.5%;
+    font-size: 0.8rem;
+    letter-spacing: 0.05rem;
+    font-weight: 200;
+    line-height: 1.6rem;
+  }
+
+  .paragraph01_CH{
+    width: 47.5%;
+    margin-left: 5%;
+    font-size: 0.85rem;
+    letter-spacing: 0.08rem;
+    font-weight: 200;
+    line-height: 1.6rem;
+  }
+
+  @media (max-width: 767px) {
+    .PJcontent_paragraph01{
+      display: block;
     }
-    .work_btn{
-      width: 50%;
+    .paragraph01_EN{
+      width: 100%;
+    }
+    .paragraph01_CH{
+      width: 100%;
+      margin-left: 0;
+      margin-top: 7%;
     }
   }
+  /* project content end */
+ 
