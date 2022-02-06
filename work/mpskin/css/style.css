@@ -270,7 +270,7 @@ body {
 .project .subheading{
   font-weight: 400;
   font-size: 0.8rem;
-  line-height: 2rem;
+  line-height: 1.3rem;
   letter-spacing: 0.05rem;
 }
 
@@ -346,10 +346,6 @@ body {
     margin-bottom: 3%;
   }
 
-  .PJcontent_paragraph01 .border{
-    font-weight: 500;
-  }  
-
   .paragraph01_EN{
     width: 47.5%;
     font-size: 0.8rem;
@@ -365,6 +361,16 @@ body {
     letter-spacing: 0.08rem;
     font-weight: 200;
     line-height: 1.6rem;
+  }
+
+  .PJcontent_paragraph01 .border{
+    font-weight: 500;
+  }
+
+  .PJcontent_paragraph01 .point{
+    background-color: #000;
+    color: #fff;
+    font-weight: 400;
   }
 
   .videoBG{
