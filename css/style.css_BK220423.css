@@ -329,15 +329,6 @@ body {
     text-align: center;
   }
 
-  .work_label{
-    font-size: 0.7rem;
-    font-weight: 400;
-    color: #fff;
-    background-color: #000;
-    padding:0.2rem 0.4rem;
-    border-radius: 4px;
-  }
-
   .work h5{
     font-size: 0.7rem;
     line-height: 1.8rem;
