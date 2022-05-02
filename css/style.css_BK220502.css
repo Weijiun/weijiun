@@ -294,11 +294,9 @@ body {
   /* gallery */
   .gallery{
     width: 100%;
-    height: auto;
     background-color: #000;
     padding: 5%;
-    clear: both;
-    display: table; 
+    height: 1500px;
   }
 
   .work li{
