@@ -70,7 +70,7 @@ body {
   aside {
     border-right:  1px solid #000;
     background: rgb(240, 240, 240);
-    flex: 1 0 15%;
+    flex: 1 1 15%;
     /* padding: 1.2rem; */
   }
 
@@ -169,7 +169,7 @@ body {
 
     /* 未點擊hamburger */
     aside {
-      flex: 1 0 0%;
+      flex: 1 1 0%;
     }
     /* 未點擊hamburger end */
 
