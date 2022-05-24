@@ -137,6 +137,7 @@ body {
     border: 1px solid #000;
     border-radius: 50%;
     margin: 1.45rem;
+    cursor: pointer;
   }
 
   .copyright{
@@ -179,7 +180,7 @@ body {
     }
     .sidebar ul{
       /*隱藏選單開始*/
-      max-height: 0px;
+      height: 0px;
       overflow: hidden;
       /*隱藏選單結束*/
       display: block;
@@ -191,7 +192,7 @@ body {
       right: 0;         
     }
     .mobile_menu .sidebar ul{
-      max-height: 100vh;
+      height: 100vh;
       transition: all 1.0s; 
     }
     .mobile_menu .sidebar li{

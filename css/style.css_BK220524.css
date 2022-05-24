@@ -70,7 +70,7 @@ body {
   aside {
     border-right:  1px solid #000;
     background: rgb(240, 240, 240);
-    flex: 1 0 15%;
+    flex: 1 1 15%;
     /* padding: 1.2rem; */
   }
 
@@ -79,22 +79,23 @@ body {
     height: 100%;
   }
 
-  .sidebar h1{
-    width: 100%;
+  .header{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .sidebar .WJ{
+    width: 80%;
     font-size: 2rem;
     letter-spacing: 0.3rem;
     font-weight: 500;
     margin-top: 1rem;
     padding: 1.2rem;
-  }
-
-  .WJ a{
     text-decoration: none;
     color: #000;
   }
 
-  .WJ{
-    display: inline-block;
+  .WJ{    
     transition: 0.3s;
   }
 
@@ -128,6 +129,16 @@ body {
     padding-left: 1rem;
   }
 
+  .hamburger{
+    display: none;
+    width: 1rem;
+    height: 1rem;
+    background-color:#000;
+    border: 1px solid #000;
+    border-radius: 50%;
+    margin: 1.45rem;
+  }
+
   .copyright{
     position: absolute;
     font-weight: 400;
@@ -143,30 +154,60 @@ body {
     display: none;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 767px) {
     .wrapper {
-      flex-direction: column-reverse;
+      /* flex-direction: column-reverse; */
+      flex-direction: column;
       /* Mobile若要改為置上可改為 column */
     }
-    .sidebar h1{
+
+    .sidebar .WJ{
       font-size: 1.5rem;
       letter-spacing: 0.2rem;
       margin-top: 0;
     }
 
-    .sidebar ul {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 0;
-      padding-top: 0;
-      padding-bottom: 0;
+    /* 未點擊hamburger */
+    aside {
+      flex: 1 1 0%;
     }
-  
-    .sidebar li{
-        font-size: 0.7rem;
-        line-height: 1.5rem;
+    /* 未點擊hamburger end */
+
+    /* 點擊hamburger */
+    .sidebar{
+      position: relative;
     }
+    .sidebar ul{
+      /*隱藏選單開始*/
+      max-height: 0px;
+      overflow: hidden;
+      /*隱藏選單結束*/
+      display: block;
+      position: absolute;
+      background-color: #000;  
+      margin: 0;
+      padding: 0;
+      left: 0;
+      right: 0;         
+    }
+    .mobile_menu .sidebar ul{
+      max-height: 100vh;
+      transition: all 1.0s; 
+    }
+    .mobile_menu .sidebar li{
+      padding: 1.2rem;
+    }
+    .mobile_menu .sidebar li a:hover{
+      background-color: #000;
+      color: #fff; 
+    }
+    .hamburger{
+      display: block;
+    }
+    .mobile_menu .hamburger{
+      background: rgb(240, 240, 240);
+    }
+    /* 點擊hamburger end */
 
     .copyright{
       display: none;
