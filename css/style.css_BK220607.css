@@ -55,10 +55,8 @@ table {
     box-sizing : border-box ;
     }
 
-html,
 body {
     font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
-    position: relative;
     margin: 0;
     overflow: hidden;
     height: 100vh;
@@ -87,6 +85,7 @@ body {
   }
 
   .sidebar .WJ{
+    width: 80%;
     font-size: 2rem;
     letter-spacing: 0.3rem;
     font-weight: 500;
@@ -105,6 +104,7 @@ body {
   }
 
   .sidebar ul {
+    list-style: none;
     margin-top: 5rem;
     padding: 1.2rem;
   }
@@ -114,6 +114,7 @@ body {
       font-size: 0.8rem;
       line-height: 1.8rem;
       letter-spacing: 0.07rem;
+      color: rgb(133, 133, 133);
   }
 
   .sidebar li a{
@@ -154,9 +155,73 @@ body {
     display: none;
   }
 
-  @media screen and (max-width:768px) {
+  @media (max-width: 767px) {
+    .wrapper {
+      /* flex-direction: column-reverse; */
+      flex-direction: column;
+      /* Mobile若要改為置上可改為 column */
+    }
+
+    .sidebar .WJ{
+      font-size: 1.5rem;
+      letter-spacing: 0.2rem;
+      margin-top: 0;
+    }
+
+    /* 未點擊hamburger */
+    aside {
+      flex: 1 1 0%;
+    }
+    /* 未點擊hamburger end */
+
+    /* 點擊hamburger */
     .sidebar{
+      position: relative;
+    }
+    .sidebar ul{
+      /*隱藏選單開始*/
+      height: 0px;
+      overflow: hidden;
+      /*隱藏選單結束*/
+      display: block;
+      position: absolute;
+      background-color: #000;  
+      margin: 0;
+      padding: 0;
+      left: 0;
+      right: 0;         
+    }
+    .mobile_menu .sidebar ul{
+      height: 100vh;
+      transition: all 1.0s; 
+    }
+    .mobile_menu .sidebar li{
+      padding: 1.2rem;
+    }
+    .mobile_menu .sidebar li a:hover{
+      background-color: #000;
+      color: #fff; 
+    }
+    .hamburger{
+      display: block;
+    }
+    .mobile_menu .hamburger{
+      background: rgb(240, 240, 240);
+    }
+    /* 點擊hamburger end */
+
+    .copyright{
       display: none;
+    }
+    .copyright_mobile{
+      padding: 5%;
+      background-color: #000;
+      display: block;
+      font-weight: 400;
+      font-size: 0.6rem;
+      line-height: 1.2rem;
+      letter-spacing: 0.05rem;
+      color: rgb(138, 138, 138);
     }
   }
   /* sidebar end */
