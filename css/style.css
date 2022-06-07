@@ -60,7 +60,7 @@ body {
     font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
     position: relative;
     margin: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
     height: 100vh;
   }
 
