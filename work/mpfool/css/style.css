@@ -55,12 +55,12 @@ table {
     box-sizing : border-box ;
     }
 
-body {
-    font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
-    margin: 0;
-    overflow: hidden;
-    height: 100vh;
-  }
+  html,
+  body {
+      font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+      position: relative;
+      margin: 0;
+    }
 
   img{
     display: block;
@@ -68,11 +68,11 @@ body {
     /* margin: 3% auto; */
   }
 
+  /* sidebar */
   main {
     overflow-y: auto;
   }
 
-  /* sidebar */
   aside {
     border-right:  1px solid #000;
     background: rgb(240, 240, 240);
@@ -82,16 +82,23 @@ body {
 
   .wrapper {
     display: flex;
+    overflow: hidden;
     height: 100%;
+    height: 100vh;
   }
 
-  .sidebar h1{
-    width: 100%;
+  .header{
+    display: flex;
+  }
+
+  .sidebar .WJ{
     font-size: 2rem;
     letter-spacing: 0.3rem;
     font-weight: 500;
     margin-top: 1rem;
     padding: 1.2rem;
+    text-decoration: none;
+    color: #000;
   }
 
   .WJ a{
@@ -99,8 +106,7 @@ body {
     color: #000;
   }
 
-  .WJ{
-    display: inline-block;
+  .WJ{    
     transition: 0.3s;
   }
 
@@ -109,17 +115,15 @@ body {
   }
 
   .sidebar ul {
-    list-style: none;
     margin-top: 5rem;
     padding: 1.2rem;
   }
 
   .sidebar li{
-      font-weight: 400;
-      font-size: 0.8rem;
-      line-height: 1.8rem;
-      letter-spacing: 0.07rem;
-      color: rgb(133, 133, 133);
+    font-weight: 400;
+    font-size: 0.8rem;
+    line-height: 1.8rem;
+    letter-spacing: 0.07rem;
   }
 
   .sidebar li a{
@@ -132,6 +136,10 @@ body {
     background-color: #fff;
     color: #000;
     padding-left: 1rem;
+  }
+
+  .sidebar_mobile{
+    display: none;
   }
 
   .copyright{
@@ -150,43 +158,106 @@ body {
   }
 
 
-  @media (max-width: 500px) {
-    .wrapper {
-      flex-direction: column-reverse;
-      /* Mobile若要改為置上可改為 column */
+  @media screen and (max-width:768px) {
+    .wrapper{
+      height: auto;
+      flex-direction: column;
     }
-    .sidebar h1{
+    .sidebar{
+      display: none;
+    }
+    .fixed{
+      position: fixed;
+      width: 100%;
+    }
+    .sidebar_mobile{
+      display: block;
+      background: rgb(240, 240, 240);
+    }
+    .header{
+      display: flex;
+      justify-content: space-between;
+    }
+    .sidebar_mobile .WJ{
+      font-weight: 500;
+      padding: 1.2rem;
+      text-decoration: none;
+      color: #000;
       font-size: 1.5rem;
       letter-spacing: 0.2rem;
       margin-top: 0;
     }
-
-    .sidebar ul {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 0;
-      padding-top: 0;
-      padding-bottom: 0;
+    .hamburger{
+      width: 1rem;
+      height: 1rem;
+      background-color:#000;
+      border: 1px solid #000;
+      border-radius: 50%;
+      margin: 1.45rem;
+      cursor: pointer;
     }
+    /* 點擊hamburger */
 
-    .sidebar li{
-      font-size: 0.7rem;
-      line-height: 1.5rem;
-  }
+    .sidebar_mobile{
+      position: relative;
+    }
+    .sidebar_mobile ul{
+      /*隱藏選單開始*/
+      height: 0px;
+      overflow: hidden;
+      /*隱藏選單結束*/
+      display: block;
+      position: absolute;
+      background-color: #000;  
+      margin: 0;
+      padding: 0;
+      left: 0;
+      right: 0;         
+    }
+    .sidebar_mobile li{
+      font-weight: 400;
+      font-size: 0.8rem;
+      line-height: 1.8rem;
+      letter-spacing: 0.07rem;
+      color: rgb(133, 133, 133);
+    }
+    .sidebar_mobile li a{
+      text-decoration: none;
+      color: rgb(133, 133, 133);
+      transition: 0.1s;
+    }
   
-    .copyright{
-      display: none;
+    .sidebar_mobile li a:hover{
+      background-color: #fff;
+      color: #000;
+      padding-left: 1rem;
     }
+    .mobile_menu .sidebar_mobile ul{
+      height: 100vh;
+      transition: all 1.0s; 
+    }
+    .mobile_menu .sidebar_mobile li{
+      padding: 1.2rem;
+    }
+    .mobile_menu .sidebar_mobile li a:hover{
+      background-color: #000;
+      color: #fff; 
+    }
+    .mobile_menu .hamburger{
+      background: rgb(240, 240, 240);
+    }
+    /* 點擊hamburger end */
+
+
     .copyright_mobile{
       padding: 5%;
-      background-color: #fff;
+      background-color: #000;
       display: block;
       font-weight: 400;
-      font-size: 0.7rem;
+      font-size: 0.6rem;
       line-height: 1.2rem;
       letter-spacing: 0.05rem;
-      color: rgb(156, 156, 156);
+      color: rgb(138, 138, 138);
     }
   }
   /* sidebar end */
@@ -211,7 +282,7 @@ body {
       color: #000;
       background-color: #fff;
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 1rem;
       letter-spacing: 0.05rem;
       font-weight: 500;
       transition: 0.1s;
@@ -225,14 +296,14 @@ body {
     cursor: pointer;
     background-color: #000;
     color: #fff;
-      display: inline-block;
-      font-size: 0.6rem;
-      font-weight: 400;
-      border: 1px solid #fff;
-      padding: 5px 7px;
-      border-radius: 50px;
-      letter-spacing: 0.05rem;
-      margin-left: 0.4rem;
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 400;
+    border: 1px solid #fff;
+    padding: 5px 7px;
+    border-radius: 50px;
+    letter-spacing: 0.05rem;
+    margin-left: 0.4rem;
   }
 
   .collab button:hover{
@@ -259,28 +330,28 @@ body {
     line-height: 0.9rem;
 }
 
-.project h2{
-  font-size: 2rem;
-  line-height: 2.5rem;
-  letter-spacing : 0.15rem;
-  font-weight:400;
-  text-align: left;
-}
+  .project h2{
+    font-size: 2rem;
+    line-height: 2.5rem;
+    letter-spacing : 0.15rem;
+    font-weight:400;
+    text-align: left;
+  }
 
-.project .subheading{
-  font-weight: 400;
-  font-size: 0.8rem;
-  line-height: 1.3rem;
-  letter-spacing: 0.05rem;
-}
+  .project .subheading{
+    font-weight: 400;
+    font-size: 0.8rem;
+    line-height: 1.3rem;
+    letter-spacing: 0.05rem;
+  }
 
-.project .subheading_CH{
-  font-weight: 400;
-  font-size: 0.8rem;
-  line-height: 1.3rem;
-  letter-spacing: 0.1rem;
-  margin-top: 0.5rem;
-}
+  .project .subheading_CH{
+    font-weight: 400;
+    font-size: 0.8rem;
+    line-height: 1.3rem;
+    letter-spacing: 0.1rem;
+    margin-top: 0.5rem;
+  }
 
   .PJinfo{
     width: 50%;
@@ -315,7 +386,11 @@ body {
     color: #fff;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
+    .content{
+      margin-top: 62px;
+    }
+
     .brief{
       display: block;
     }
@@ -379,10 +454,17 @@ body {
   }
 
   .PJcontent_paragraph01 .underline{
-    text-decoration: underline;
+    text-decoration: none;
+    color: #000;
+    border-bottom: 1px solid #000;    
   }
 
-  @media (max-width: 767px) {
+  .PJcontent_paragraph01 .underline:hover{
+    color: rgb(255, 142, 72);
+    border-bottom: 1px solid rgb(255, 142, 72);    
+  }
+
+  @media (max-width: 768px) {
     .PJcontent_paragraph01{
       display: block;
     }
