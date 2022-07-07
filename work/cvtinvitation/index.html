@@ -8,19 +8,24 @@
     <title>Weijiun | Invitation Card for CVT Groundbreaking Ceremony</title>
     <meta property="og:image"
         content="https://weijiun.github.io/weijiun/work/cvtinvitation/images/CVT_invitation_cover.jpg" />
+    <link rel="icon" href="https://weijiun.github.io/weijiun/images/favicon.ico">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/hamburger.js"></script>
 </head>
 
 <body>
     <div class="wrapper">
 
         <!-- sidebar -->
+        <!-- pc-menu -->
         <aside class="sidebar">
-            <h1 class="WJ"><a href="https://weijiun.github.io/weijiun/">WEIJIUN</a></h1>
+            <div class="header">
+                <a class="WJ" href="https://weijiun.github.io/weijiun/">WEIJIUN</a>
+            </div>
             <ul>
                 <li><a href="https://weijiun.github.io/weijiun/">◯ WORK</a></li>
-                <li><a href="#">◯ ABOUT</a></li>
+                <li><a href="https://weijiun.github.io/weijiun/profile/">◯ PROFILE</a></li>
                 <li><a href="https://www.linkedin.com/in/weijiunliu/" target="blank">◯ LINKEDIN</a></li>
                 <li><a href="https://www.instagram.com/weeeeeknds/" target="blank">◯ INSTAGRAM</a></li>
             </ul>
@@ -30,6 +35,21 @@
                     All Rights Reserved.</p>
             </div>
         </aside>
+        <!-- mobile-menu -->
+        <div class="fixed">
+            <div class="sidebar_mobile">
+                <div class="header">
+                    <a class="WJ" href="https://weijiun.github.io/weijiun/">WEIJIUN</a>
+                    <div class="hamburger"></div>
+                </div>
+                <ul>
+                    <li><a href="https://weijiun.github.io/weijiun/">◯ WORK</a></li>
+                    <li><a href="https://weijiun.github.io/weijiun/profile/">◯ PROFILE</a></li>
+                    <li><a href="https://www.linkedin.com/in/weijiunliu/" target="blank">◯ LINKEDIN</a></li>
+                    <li><a href="https://www.instagram.com/weeeeeknds/" target="blank">◯ INSTAGRAM</a></li>
+                </ul>
+            </div>
+        </div>
         <!-- sidebar end -->
 
         <main>
@@ -89,6 +109,7 @@
             </div>
         </main>
     </div>
+    
     <!-- copyEmail -->
     <script>
         function copyToClipboard(element) {
