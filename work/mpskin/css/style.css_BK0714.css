@@ -301,7 +301,7 @@ body {
     color: #000;
     background-color: #fff;
     display: inline-block;
-    margin: 0.4rem 0.4rem 0.7rem 0;
+    margin: 0.4rem 0.4rem 0 0;
     font-size: 0.8rem;
     font-weight: 400;
     border: 1px solid #000;
@@ -342,10 +342,6 @@ body {
     padding: 5%;
   }
 
-  .PJcontent img{
-    margin-bottom: 3%;
-  }
-
   .PJcontent_paragraph01{
     display: flex;
     margin-bottom: 3%;
@@ -376,10 +372,6 @@ body {
     background-color: #000;
     color: #fff;
     font-weight: 400;
-  }
-
-  .PJcontent_paragraph01 .underline{
-    text-decoration: underline;
   }
 
   .videoBG{
