@@ -337,6 +337,15 @@ body {
     text-align: left;
   }
 
+  .profile_content .small{
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing : 0.08rem;
+    padding: 0 1.5rem 0 0rem;
+    color: rgb(144, 144, 144);
+    font-style: oblique;
+  }
+
   .tag{
     background-color: #fff;
     display: inline-block;

@@ -55,11 +55,13 @@ table {
     box-sizing : border-box ;
     }
 
+html,
 body {
     font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+    position: relative;
     margin: 0;
-    overflow: hidden;
-    height: 100vh;
+    /* overflow: hidden; */
+    /* height: 100vh; */
   }
 
 /* sidebar */
@@ -70,31 +72,33 @@ body {
   aside {
     border-right:  1px solid #000;
     background: rgb(240, 240, 240);
-    flex: 1 0 15%;
+    flex: 1 1 15%;
     /* padding: 1.2rem; */
   }
 
   .wrapper {
     display: flex;
+    overflow: hidden;
     height: 100%;
+    height: 100vh;
   }
 
-  .sidebar h1{
-    width: 100%;
+  .header{
+    display: flex;
+    /* justify-content: space-between; */
+  }
+
+  .sidebar .WJ{
     font-size: 2rem;
     letter-spacing: 0.3rem;
     font-weight: 500;
     margin-top: 1rem;
     padding: 1.2rem;
-  }
-
-  .WJ a{
     text-decoration: none;
     color: #000;
   }
 
-  .WJ{
-    display: inline-block;
+  .WJ{    
     transition: 0.3s;
   }
 
@@ -103,7 +107,6 @@ body {
   }
 
   .sidebar ul {
-    list-style: none;
     margin-top: 5rem;
     padding: 1.2rem;
   }
@@ -113,7 +116,6 @@ body {
       font-size: 0.8rem;
       line-height: 1.8rem;
       letter-spacing: 0.07rem;
-      color: rgb(133, 133, 133);
   }
 
   .sidebar li a{
@@ -126,6 +128,10 @@ body {
     background-color: #fff;
     color: #000;
     padding-left: 1rem;
+  }
+
+  .sidebar_mobile{
+    display: none;
   }
 
   .copyright{
@@ -143,34 +149,97 @@ body {
     display: none;
   }
 
-  @media (max-width: 500px) {
-    .wrapper {
-      flex-direction: column-reverse;
-      /* Mobile若要改為置上可改為 column */
+  @media screen and (max-width:768px) {
+    .wrapper{
+      height: auto;
+      flex-direction: column;
     }
-    .sidebar h1{
+    .sidebar{
+      display: none;
+    }
+    .fixed{
+      position: fixed;
+      width: 100%;
+    }
+    .sidebar_mobile{
+      display: block;
+      background: rgb(240, 240, 240);
+    }
+    .header{
+      display: flex;
+      justify-content: space-between;
+    }
+    .sidebar_mobile .WJ{
+      font-weight: 500;
+      padding: 1.2rem;
+      text-decoration: none;
+      color: #000;
       font-size: 1.5rem;
       letter-spacing: 0.2rem;
       margin-top: 0;
     }
+    .hamburger{
+      width: 1rem;
+      height: 1rem;
+      background-color:#000;
+      border: 1px solid #000;
+      border-radius: 50%;
+      margin: 1.45rem;
+      cursor: pointer;
+    }
+    /* 點擊hamburger */
 
-    .sidebar ul {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 0;
-      padding-top: 0;
-      padding-bottom: 0;
+    .sidebar_mobile{
+      position: relative;
+    }
+    .sidebar_mobile ul{
+      /*隱藏選單開始*/
+      height: 0px;
+      overflow: hidden;
+      /*隱藏選單結束*/
+      display: block;
+      position: absolute;
+      background-color: #000;  
+      margin: 0;
+      padding: 0;
+      left: 0;
+      right: 0;         
+    }
+    .sidebar_mobile li{
+      font-weight: 400;
+      font-size: 0.8rem;
+      line-height: 1.8rem;
+      letter-spacing: 0.07rem;
+      color: rgb(133, 133, 133);
+    }
+    .sidebar_mobile li a{
+      text-decoration: none;
+      color: rgb(133, 133, 133);
+      transition: 0.1s;
     }
   
-    .sidebar li{
-        font-size: 0.7rem;
-        line-height: 1.5rem;
+    .sidebar_mobile li a:hover{
+      background-color: #fff;
+      color: #000;
+      padding-left: 1rem;
     }
+    .mobile_menu .sidebar_mobile ul{
+      height: 100vh;
+      transition: all 1.0s; 
+    }
+    .mobile_menu .sidebar_mobile li{
+      padding: 1.2rem;
+    }
+    .mobile_menu .sidebar_mobile li a:hover{
+      background-color: #000;
+      color: #fff; 
+    }
+    .mobile_menu .hamburger{
+      background: rgb(240, 240, 240);
+    }
+    /* 點擊hamburger end */
 
-    .copyright{
-      display: none;
-    }
+
     .copyright_mobile{
       padding: 5%;
       background-color: #000;
@@ -217,14 +286,14 @@ body {
     cursor: pointer;
     background-color: #000;
     color: #fff;
-      display: inline-block;
-      font-size: 0.6rem;
-      font-weight: 400;
-      border: 1px solid #fff;
-      padding: 5px 7px;
-      border-radius: 50px;
-      letter-spacing: 0.05rem;
-      margin-left: 0.4rem;
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 400;
+    border: 1px solid #fff;
+    padding: 5px 7px;
+    border-radius: 50px;
+    letter-spacing: 0.05rem;
+    margin-left: 0.4rem;
   }
 
   .collab button:hover{
@@ -233,29 +302,33 @@ body {
   }
   /* Email end */
 
-  /* bio */
-  .bio{
-      border-bottom: 1px solid #000;
-      display: flex;
-      padding: 5%;
-      font-family: hero-new,sans-serif;
+
+  /* profile */
+  .CV{
+    background-color: #000;
+    color: #fff;
   }
 
-  .bio h2{
+  .profile{
+    border-bottom: 1px solid #fff;
+    display: flex;
+    padding: 5%;
+    font-family: hero-new,sans-serif;
+  }
+
+  .profile h2{
     width: 30%;
-    /* margin: 0px auto; */
-    font-weight: 300;
+    font-weight: 400;
     font-style: normal;
     letter-spacing : 0.02rem;
-    font-size: 2.3rem;
+    font-size: 2.6rem;
     line-height: 3rem;
     text-align: left;
   }
 
-  .bio_content{
-    width: 55%;
+  .profile_content{
+    width: 60%;
     margin-left: 5%;
-    /* margin: 0px auto; */
     font-weight: 300;
     font-style: normal;
     line-height : 1.8rem;
@@ -265,158 +338,67 @@ body {
   }
 
   .tag{
-      background-color: #fff;
-      display: inline-block;
-      margin: 0.8rem 0.4rem 0 0;
-      font-size: 0.8rem;
-      font-weight: 400;
-      border: 1px solid #000;
-      padding: 2px 15px;
-      border-radius: 50px;
-      letter-spacing: 0.05rem;
+    background-color: #fff;
+    display: inline-block;
+    margin: 0.8rem 0.4rem 0 0;
+    font-size: 0.8rem;
+    font-weight: 400;
+    border: 1px solid #000;
+    padding: 2px 15px;
+    border-radius: 50px;
+    letter-spacing: 0.05rem;
   }
 
-  @media (max-width: 767px) {
-    .bio{
+  .period{
+    color: rgb(172, 172, 172);
+    font-size: 0.7rem;
+    line-height : 0;
+    margin-right: 1%;
+  }
+
+  .title{
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  .brief{
+    font-size: 0.8rem;
+    color: rgb(198, 198, 198);
+  }
+
+  .ft{
+    color: rgb(172, 172, 172);
+    text-decoration: none;
+    margin: 0.4rem;
+    border-bottom: 0.8px solid rgb(172, 172, 172);
+  }
+  .ft:hover{
+    color: #fff;
+    border-bottom: 0;
+    font-weight: 500;
+  }
+
+  .divider{
+    border-width: 0;
+    border-top: 0.5px solid rgb(96, 96, 96);
+  }
+
+  @media (max-width: 768px) {
+    .content{
+      margin-top: 62px;
+    }
+    .profile{
       display: block;
     }
-    .bio h2{
+    .profile h2{
       width: 100%;
     }
-    .bio_content{
+    .profile_content{
       width: 100%;
       margin-left: 0;
       margin-top: 5%;
     }
   }
-  /* bio end */
+  /* profile end */
 
-  /* gallery */
-  .gallery{
-    width: 100%;
-    background-color: #000;
-    padding: 5%;
-    height: 1500px;
-  }
-
-  .work li{
-    background-color: #fff;
-    width: 29.333%;
-    float: left;
-    margin-left: 2%;
-    margin-right: 2%;
-    margin-bottom: 3rem;
-    border-radius: 10px;
-    padding: 2%;
-  }
-
-  .work img{
-    width: 100%;
-    display: block;
-    margin: 0 auto 5% auto;
-    border-radius: 10px;
-  }
-
-  .work img:hover{
-    border: #000 solid 1px;
-  }
-
-  .work h4{
-    font-size: 0.9rem;
-    line-height: 1.8rem;
-    font-weight: 300;
-    letter-spacing: 0.08rem;
-    text-align: center;
-  }
-
-  .work_label{
-    font-size: 0.7rem;
-    font-weight: 400;
-    color: #fff;
-    background-color: #000;
-    padding:0.2rem 0.4rem;
-    border-radius: 4px;
-  }
-
-  .work h5{
-    font-size: 0.7rem;
-    line-height: 1.8rem;
-    font-weight: 400;
-    letter-spacing: 0.05rem;
-    text-align: center;
-  }
-
-  .work .date{
-    font-size: 0.7rem;
-    line-height: 1.8rem;
-    font-weight: 300;
-    letter-spacing: 0.05rem;
-    text-align: center;
-    color: rgb(105, 105, 105);
-  }
-
-  .work a{
-    text-decoration: none;
-  }
-
-  .work_btn{
-    width: 50%;
-    color: rgb(116, 116, 116);
-    /* display: inline-block; */
-    font-size: 0.8rem;
-    font-weight: 300;
-    border: 1px solid rgb(179, 179, 179);
-    padding: 10px 15px;
-    border-radius: 50px;
-    letter-spacing: 0.05rem;
-    margin: 5% auto 0 auto;
-    text-align: center;
-  }
-
-  .work_btn:hover{
-    color: #fff;
-    background-color: #000;
-  }
-
-  @media (max-width: 1200px) {
-    .work_btn{
-      width: 62%;
-      margin-bottom: 3%;
-    }
-  }
-
-  @media (max-width: 1000px) {
-    .work_btn{
-      width: 85%;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .work li{
-      width: 46%;
-    }
-    .work_btn{
-      width: 62%;
-    }
-  }
-
-  @media (max-width: 680px) {
-    .work_btn{
-      width: 85%;
-    }
-  }
-
-  @media (max-width: 550px) {
-    .work_btn{
-      width: 95%;
-    }
-  }
-
-  @media (max-width: 380px) {
-    .work li{
-      width: 96%;
-    }
-    .work_btn{
-      width: 50%;
-    }
-  }
+  
