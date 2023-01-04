@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weijiun | Marshmallow 棉花糖存錢App</title>
+    <meta property="og:image" content="https://weijiun.github.io/weijiun/work/marshmallow/images/cover.jpg" />
+    <link rel="icon" href="https://weijiun.github.io/weijiun/images/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/hamburger.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <!-- sidebar -->
+        <!-- pc-menu -->
+        <aside class="sidebar">
+            <div class="header">
+                <a class="WJ" href="https://weijiun.github.io/weijiun/">WEIJIUN</a>
+            </div>
+            <ul>
+                <li><a href="https://weijiun.github.io/weijiun/">◯ WORK</a></li>
+                <li><a href="https://weijiun.github.io/weijiun/profile/">◯ PROFILE</a></li>
+                <li><a href="https://www.linkedin.com/in/weijiunliu/" target="blank">◯ LINKEDIN</a></li>
+                <li><a href="https://www.instagram.com/weijiun_portfolio/" target="blank">◯ INSTAGRAM</a></li>
+            </ul>
+            <div class="copyright">
+                <p>COPYRIGHT(C)2021-2022 <br>
+                    WEIJIUN DESIGN <br>
+                    All Rights Reserved.</p>
+            </div>
+        </aside>
+        <!-- mobile-menu -->
+        <div class="fixed">
+            <div class="sidebar_mobile">
+                <div class="header">
+                    <a class="WJ" href="https://weijiun.github.io/weijiun/">WEIJIUN</a>
+                    <div class="hamburger"></div>
+                </div>
+                <ul>
+                    <li><a href="https://weijiun.github.io/weijiun/">◯ WORK</a></li>
+                    <li><a href="https://weijiun.github.io/weijiun/profile/">◯ PROFILE</a></li>
+                    <li><a href="https://www.linkedin.com/in/weijiunliu/" target="blank">◯ LINKEDIN</a></li>
+                    <li><a href="https://www.instagram.com/weijiun_portfolio/" target="blank">◯ INSTAGRAM</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- sidebar end -->    
+
+        <main>
+            <div class="content">
+                <!-- topEmail -->
+                <div class="collab">
+                    <h3>If you would like to collab or have any questions, give me a shout. → <a id="p2"
+                            href="mailto:liuweijiun@gmail.com">liuweijiun@gmail.com</a>
+                        <button onclick="copyToClipboard('#p2')">COPY</button>
+                    </h3>
+                </div>
+                <!-- topEmail end -->
+
+                <!-- project brief -->
+                <div class="brief">
+                    <div class="project">
+                        <h4>PROJECT</h4>
+                        <h2>Marshmallow</h2>
+                        <p class="subheading">UI diesign｜Saving APP</p>
+                        <p class="subheading_CH">棉花糖｜介面設計｜儲蓄APP</p>
+                    </div>
+
+                    <div class="PJinfo">
+
+                        <h4>DATE</h4>
+                        <p>January 4th, 2023 </p>
+                        <h4>CLIENT</h4>
+                        <p>Marshmallow | 棉花糖</p>
+                        <h4>DIRECTOR & DESIGNER</h4>
+                        <p>Weijiun</p>
+                        <h4>LINK →</h4>
+                        <a class="tag" href="https://www.figma.com/proto/zU5zigljhbvjSzXFk8aDEj/marshmallow?page-id=0%3A1&node-id=4%3A36&viewport=-1750%2C-993%2C0.12&scaling=scale-down&starting-point-node-id=4%3A36" target="blank">Prototype</a>
+
+                    </div>
+
+                </div>
+                <!-- project brief end -->
+
+                <!-- project content -->
+                <div class="PJcontent">
+                    <div class="PJcontent_paragraph01">
+                        <p class="paragraph01_EN">
+                            
+
+                            </br>
+                        </p>
+                        <p class="paragraph01_CH">
+
+                            
+
+                        </p>
+                    </div>
+
+                    <img src="images/marshmallow.jpg" alt=""></br>
+                    </br>
+
+                    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="800" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FzU5zigljhbvjSzXFk8aDEj%2Fmarshmallow%3Fpage-id%3D0%253A1%26node-id%3D4%253A36%26viewport%3D-1750%252C-993%252C0.12%26scaling%3Dscale-down%26starting-point-node-id%3D4%253A36" allowfullscreen></iframe>
+
+
+
+                </div>
+                <!-- project content end -->
+
+                <!-- copyright_mobile -->
+                <div class="copyright_mobile">
+                    <p>COPYRIGHT(C)2021-2022 WEIJIUN DESIGN All Rights Reserved.</p>
+                </div>
+                <!-- copyright_mobile end -->
+
+            </div>
+        </main>
+    </div>
+    <!-- copyEmail -->
+    <script>
+        function copyToClipboard(element) {
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val($(element).text()).select();
+            document.execCommand("copy");
+            $temp.remove();
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,481 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Google Noto sans font */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+/* @import url("https://use.typekit.net/qzp1ird.css"); */
+
+*,*::before,*::after {
+    box-sizing : border-box ;
+    }
+
+  html,
+  body {
+      font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+      position: relative;
+      margin: 0;
+    }
+
+  img{
+    display: block;
+    width: 100%;
+    /* margin: 3% auto; */
+  }
+
+  /* sidebar */
+  main {
+    overflow-y: auto;
+  }
+
+  aside {
+    border-right:  1px solid #000;
+    background: rgb(240, 240, 240);
+    flex: 1 0 15%;
+    /* padding: 1.2rem; */
+  }
+
+  .wrapper {
+    display: flex;
+    overflow: hidden;
+    height: 100%;
+    height: 100vh;
+  }
+
+  .header{
+    display: flex;
+  }
+
+  .sidebar .WJ{
+    font-size: 2rem;
+    letter-spacing: 0.3rem;
+    font-weight: 500;
+    margin-top: 1rem;
+    padding: 1.2rem;
+    text-decoration: none;
+    color: #000;
+  }
+
+  .WJ a{
+    text-decoration: none;
+    color: #000;
+  }
+
+  .WJ{    
+    transition: 0.3s;
+  }
+
+  .WJ:hover{
+    transform: translate(0 , 8%);
+  }
+
+  .sidebar ul {
+    margin-top: 5rem;
+    padding: 1.2rem;
+  }
+
+  .sidebar li{
+    font-weight: 400;
+    font-size: 0.8rem;
+    line-height: 1.8rem;
+    letter-spacing: 0.07rem;
+  }
+
+  .sidebar li a{
+    text-decoration: none;
+    color: rgb(133, 133, 133);
+    transition: 0.1s;
+  }
+
+  .sidebar li a:hover{
+    background-color: #fff;
+    color: #000;
+    padding-left: 1rem;
+  }
+
+  .sidebar_mobile{
+    display: none;
+  }
+
+  .copyright{
+    position: absolute;
+    font-weight: 400;
+    font-size: 0.6rem;
+    line-height: 1rem;
+    letter-spacing: 0.05rem;
+    color: rgb(138, 138, 138);
+    left: 2%;
+    bottom: 2%;
+  }
+
+  .copyright_mobile{
+    display: none;
+  }
+
+
+  @media screen and (max-width:768px) {
+    .wrapper{
+      height: auto;
+      flex-direction: column;
+    }
+    .sidebar{
+      display: none;
+    }
+    .fixed{
+      position: fixed;
+      width: 100%;
+    }
+    .sidebar_mobile{
+      display: block;
+      background: rgb(240, 240, 240);
+    }
+    .header{
+      display: flex;
+      justify-content: space-between;
+    }
+    .sidebar_mobile .WJ{
+      font-weight: 500;
+      padding: 1.2rem;
+      text-decoration: none;
+      color: #000;
+      font-size: 1.5rem;
+      letter-spacing: 0.2rem;
+      margin-top: 0;
+    }
+    .hamburger{
+      width: 1rem;
+      height: 1rem;
+      background-color:#000;
+      border: 1px solid #000;
+      border-radius: 50%;
+      margin: 1.45rem;
+      cursor: pointer;
+    }
+    /* 點擊hamburger */
+
+    .sidebar_mobile{
+      position: relative;
+    }
+    .sidebar_mobile ul{
+      /*隱藏選單開始*/
+      height: 0px;
+      overflow: hidden;
+      /*隱藏選單結束*/
+      display: block;
+      position: absolute;
+      background-color: #000;  
+      margin: 0;
+      padding: 0;
+      left: 0;
+      right: 0;         
+    }
+    .sidebar_mobile li{
+      font-weight: 400;
+      font-size: 0.8rem;
+      line-height: 1.8rem;
+      letter-spacing: 0.07rem;
+      color: rgb(133, 133, 133);
+    }
+    .sidebar_mobile li a{
+      text-decoration: none;
+      color: rgb(133, 133, 133);
+      transition: 0.1s;
+    }
+  
+    .sidebar_mobile li a:hover{
+      background-color: #fff;
+      color: #000;
+      padding-left: 1rem;
+    }
+    .mobile_menu .sidebar_mobile ul{
+      height: 100vh;
+      transition: all 1.0s; 
+    }
+    .mobile_menu .sidebar_mobile li{
+      padding: 1.2rem;
+    }
+    .mobile_menu .sidebar_mobile li a:hover{
+      background-color: #000;
+      color: #fff; 
+    }
+    .mobile_menu .hamburger{
+      background: rgb(240, 240, 240);
+    }
+    /* 點擊hamburger end */
+
+
+    .copyright_mobile{
+      padding: 5%;
+      background-color: #000;
+      display: block;
+      font-weight: 400;
+      font-size: 0.6rem;
+      line-height: 1.2rem;
+      letter-spacing: 0.05rem;
+      color: rgb(138, 138, 138);
+    }
+  }
+  /* sidebar end */
+
+  .content{
+    width: 100%;
+  }
+
+  /* topEmail */
+  .collab{
+    font-family: hero-new,sans-serif;
+    color: #fff;
+    background-color: #000;
+    padding: 1rem 5%;
+    font-weight: 300;
+    letter-spacing: 0.02rem;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+  }
+
+  .collab a{
+      color: #000;
+      background-color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      letter-spacing: 0.05rem;
+      font-weight: 500;
+      transition: 0.1s;
+  }
+
+  .collab a:hover{
+      padding-left: 1rem;
+  }
+
+  .collab button{
+    cursor: pointer;
+    background-color: #000;
+    color: #fff;
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 400;
+    border: 1px solid #fff;
+    padding: 5px 7px;
+    border-radius: 50px;
+    letter-spacing: 0.05rem;
+    margin-left: 0.4rem;
+  }
+
+  .collab button:hover{
+    background-color: #fff;
+    color: #000;
+  }
+  /* topEmail end */
+
+  /* project brief */
+  .brief{
+      border-bottom: 1px solid #000;
+      display: flex;
+      padding: 5%;
+  }
+
+  .project{
+    width: 50%;
+  }
+
+  .brief h4{
+    font-size: 0.6rem;
+    letter-spacing: 0.08rem;
+    font-weight: 600;
+    line-height: 0.9rem;
+}
+
+  .project h2{
+    font-size: 2rem;
+    line-height: 2.5rem;
+    letter-spacing : 0.15rem;
+    font-weight:400;
+    text-align: left;
+  }
+
+  .project .subheading{
+    font-weight: 400;
+    font-size: 0.8rem;
+    line-height: 1.3rem;
+    letter-spacing: 0.05rem;
+  }
+
+  .project .subheading_CH{
+    font-weight: 400;
+    font-size: 0.8rem;
+    line-height: 1.3rem;
+    letter-spacing: 0.1rem;
+    margin-top: 0.5rem;
+  }
+
+  .PJinfo{
+    width: 50%;
+    margin-left: 5%;
+  }
+
+  .PJinfo p{
+      font-size: 0.8rem;
+      letter-spacing: 0.1rem;
+      font-weight: 200;
+      line-height: 1.3rem;
+      margin-bottom: 3%;
+  }
+
+  .PJinfo a{
+    text-decoration: none;
+    cursor: pointer;
+    color: #000;
+    background-color: #fff;
+    display: inline-block;
+    margin: 0.4rem 0.4rem 0.7rem 0;
+    font-size: 0.8rem;
+    font-weight: 400;
+    border: 1px solid #000;
+    padding: 10px 15px;
+    border-radius: 50px;
+    letter-spacing: 0.05rem;
+  }
+
+  .PJinfo a:hover{
+    background-color: #000;
+    color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    .content{
+      margin-top: 62px;
+    }
+
+    .brief{
+      display: block;
+    }
+    .project{
+      width: 100%;
+    }
+    .PJinfo{
+      width: 100%;
+      margin-left: 0;
+      margin-top: 7%;
+    }
+  }
+
+  @media (max-width: 680px) {
+    .project h2{
+      font-size: 1.6rem;
+      line-height: 2.5rem;
+    }
+  }
+  /* project brief end */
+
+  /* project content */
+  .PJcontent{
+    padding: 5%;
+  }
+
+  /* .PJcontent img{
+    margin-bottom: 3%;
+  } */
+
+  .PJcontent_paragraph01{
+    display: flex;
+    margin-bottom: 3%;
+  }
+
+  .paragraph01_EN{
+    width: 47.5%;
+    font-size: 0.8rem;
+    letter-spacing: 0.05rem;
+    font-weight: 200;
+    line-height: 1.6rem;
+  }
+
+  .paragraph01_CH{
+    width: 47.5%;
+    margin-left: 5%;
+    font-size: 0.85rem;
+    letter-spacing: 0.08rem;
+    font-weight: 200;
+    line-height: 1.6rem;
+  }
+
+  .PJcontent_paragraph01 .border{
+    font-weight: 500;
+  }
+
+  .PJcontent_paragraph01 .point{
+    background-color: #000;
+    color: #fff;
+    font-weight: 400;
+  }
+
+  .PJcontent_paragraph01 .underline{
+    text-decoration: none;
+    color: #000;
+    border-bottom: 1px solid #000;    
+  }
+
+  .PJcontent_paragraph01 .underline:hover{
+    color: rgb(255, 142, 72);
+    border-bottom: 1px solid rgb(255, 142, 72);    
+  }
+
+  @media (max-width: 768px) {
+    .PJcontent_paragraph01{
+      display: block;
+    }
+    .paragraph01_EN{
+      width: 100%;
+    }
+    .paragraph01_CH{
+      width: 100%;
+      margin-left: 0;
+      margin-top: 7%;
+    }
+  }
+  /* project content end */
+ 
