@@ -493,7 +493,7 @@ body {
     }
   }
 
-  @media (max-width: 414px) {
+  @media (max-width: 380px) {
     .work li{
       width: 96%;
     }
